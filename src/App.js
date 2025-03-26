@@ -28,7 +28,7 @@ function App() {
       <button className="launch-button" onClick={openChannels}>
         Open Channels
       </button>
-      <p className="launch-button">New</p>
+      <p className="launch-button">New button</p>
 
       {modalOpen && <ChannelsModal onClose={() => setModalOpen(false)} />}
     </div>
