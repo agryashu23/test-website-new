@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  padding: 4rem;
+  font-family: Arial, sans-serif;
+}
+
+.launch-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.modal-sidepanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.channels-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  flex-grow: 1;
+}
+
+.close-button {
+  background: transparent;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
