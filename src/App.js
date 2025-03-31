@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ChannelsModal from "./components/ChannelsModal";
 import "./App.css";
 
 function App() {
@@ -7,19 +6,29 @@ function App() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://channels.social/widget.js?apiKey=YOUR_API_KEY";
+    script.src =
+      "http://localhost:3001/widget.js?apiKey=channelsbychips.site-6662f76162ac56e3fb0bcc5d-dc7cc137875e6f212e5196874431ec69";
     script.async = true;
     document.body.appendChild(script);
+    script.onload = () => {
+      if (window.ChannelsWidget) {
+        window.ChannelsWidget();
+      }
+    };
   }, []);
 
   const openChannels = () => {
     setModalOpen(true);
-    if (window.openChannelsWidget) {
-      window.openChannelsWidget({
-        selectedChannel: "general",
-        email: "test@example.com",
-      });
-    }
+    setTimeout(() => {
+      if (window.openChannelsWidget) {
+        window.openChannelsWidget({
+          selectedChannel: "Channel1",
+          email: "yashu@chips.social",
+        });
+      } else {
+        console.warn("openChannelsWidget not ready");
+      }
+    }, 200);
   };
 
   return (
@@ -28,9 +37,18 @@ function App() {
       <button className="launch-button" onClick={openChannels}>
         Open Channels
       </button>
-      <p className="launch-button">New button 2</p>
 
-      {modalOpen && <ChannelsModal onClose={() => setModalOpen(false)} />}
+      {modalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-sidepanel">
+            <iframe
+              src="http://localhost:3001/embed/channels"
+              title="Channels Embed"
+              className="channels-frame"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
