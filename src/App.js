@@ -40,12 +40,6 @@ function App() {
 
   return (
     <div className="og-container">
-      {/* <Helmet>
-        <meta charSet="utf-8" />
-        <title>Channelsbychips.site</title>
-        <link rel="icon" href={logoPath} />
-      </Helmet> */}
-
       <div className="left-panel">
         <img src={Logo} alt="Logo" className="logo" />
         <div className="content-box">
