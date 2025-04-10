@@ -65,7 +65,7 @@ function App() {
         <div className="modal-overlay" onClick={() => setModalOpen(false)}>
           <div className="modal-sidepanel" onClick={(e) => e.stopPropagation()}>
             <iframe
-              src="http://localhost:3001/embed/channels"
+              src="https://channels.social/embed/channels"
               title="Channels Embed"
               className="channels-frame"
             ></iframe>
