@@ -26,7 +26,7 @@ function App() {
       if (window.openChannelsWidget) {
         window.openChannelsWidget({
           selectedChannel: "channel1",
-          email: "yashu.agrawal2312@gmail.com",
+          email: "yashuagr2000@gmail.com",
           selectedTopic: "topic4",
           channels: ["channel1", "channel2"],
         });
@@ -54,14 +54,7 @@ function App() {
             >
               Check out Channels.social
             </button>
-            {/* <a
-              href="https://calendly.com/channels_social/talk-to-us"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="secondary-btn"
-            >
-              Contact us
-            </a> */}
+
             <button className="secondary-btn" onClick={openChannels}>
               Open Channels
             </button>
