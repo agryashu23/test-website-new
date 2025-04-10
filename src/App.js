@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Logo from "./assets/channels_logo.svg";
-import logoPath from "./assets/logo.svg";
 import ChipImage from "./assets/chips_home_image.svg";
 import "./App.css";
-import { Helmet } from "react-helmet";
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
