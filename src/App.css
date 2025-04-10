@@ -207,3 +207,10 @@ body {
    
   }
 }
+
+@media (max-width: 500px) {
+  .modal-sidepanel{
+    width:350px
+  }
+
+}
