@@ -6,6 +6,7 @@ import "./App.css";
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
 
   // useEffect(() => {
   //   const script = document.createElement("script");
@@ -26,7 +27,7 @@ function App() {
       if (window.openChannelsWidget) {
         window.openChannelsWidget({
           selectedChannel: "channel1",
-          email: "yashuagr2000@gmail.com",
+          email: email,
           selectedTopic: "topic4",
           channels: ["channel1", "channel2"],
         });
@@ -47,6 +48,15 @@ function App() {
             All your data has been securely transferred to Channels, which will
             provide you a better experience.
           </p>
+          <div className="emailField">
+            <input
+              type="email"
+              className="input-field"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
           <div className="cta-buttons">
             <button
               className="primary-btn"

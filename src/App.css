@@ -164,6 +164,13 @@ body {
   object-fit: contain;
 }
 
+.emailField{
+  margin-top: 8px;
+}
+.input-field{
+  padding: 4px 0px;
+}
+
 @media (max-width: 900px) {
   .og-container {
     flex-direction: column;
