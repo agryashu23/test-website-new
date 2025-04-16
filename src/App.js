@@ -26,10 +26,10 @@ function App() {
     setTimeout(() => {
       if (window.openChannelsWidget) {
         window.openChannelsWidget({
-          selectedChannel: "channel1",
+          selectedChannel: "Football Club",
           email: email,
-          selectedTopic: "topic4",
-          channels: ["channel1", "channel2"],
+          selectedTopic: "General",
+          channels: ["Football Club", "channel2"],
         });
       } else {
         console.warn("openChannelsWidget not ready");
