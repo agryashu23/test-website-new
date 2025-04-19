@@ -42,7 +42,7 @@
   height: 100%;
   border: none;
   flex-grow: 1;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 0;
 }
 
 .close-button {
