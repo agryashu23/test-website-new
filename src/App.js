@@ -48,26 +48,24 @@ function App() {
             All your data has been securely transferred to Channels, which will
             provide you a better experience.
           </p>
-          <div className="emailField">
-            <input
-              type="email"
-              className="input-field"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
 
           <div className="cta-buttons">
-            <button
-              className="primary-btn"
-              onClick={() => (window.location.href = "https://channels.social")}
-            >
-              Check out Channels.social
+            <div className="emailField">
+              <input
+                type="email"
+                className="input-field"
+                placeholder="email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <button className="primary-btn" onClick={openChannels}>
+              Checkout embed demo
             </button>
 
-            <button className="secondary-btn" onClick={openChannels}>
+            {/* <button className="secondary-btn" onClick={openChannels}>
               Open Channels
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
