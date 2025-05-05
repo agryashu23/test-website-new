@@ -29,6 +29,7 @@ function App() {
           selectedChannel: "Football Club",
           email: email,
           selectedTopic: "General",
+          theme:"dark",
           channels: ["Football Club", "channel2"],
         });
       } else {
