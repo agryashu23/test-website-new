@@ -150,14 +150,14 @@ body {
 }
 
 .secondary-btn {
-  background: transparent;
-  color: #202020;
-  border: 1px solid #202020;
+  background: #3F3F3F;
+  color:  #c4c4c4;
   text-decoration: none;
   text-align: center;
-  padding: 8px 16px;
+  padding: 12px 20px;
+  border: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .right-image {

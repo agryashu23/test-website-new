@@ -60,7 +60,7 @@ function App() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <button className="primary-btn" onClick={openChannels}>
+            <button className={`${email.length>=10?'primary-btn':'secondary-btn'}`} onClick={openChannels}>
               Checkout embed demo
             </button>
 
