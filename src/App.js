@@ -26,11 +26,11 @@ function App() {
     setTimeout(() => {
       if (window.openChannelsWidget) {
         window.openChannelsWidget({
-          selectedChannel: "Football Club",
+          selectedChannel: "Footyl Club",
           email: email,
           selectedTopic: "General",
-          theme:"dark",
-          channels: ["Football Club", "channel2"],
+          theme: "dark",
+          channels: ["Footyl Club"],
         });
       } else {
         console.warn("openChannelsWidget not ready");
@@ -60,7 +60,12 @@ function App() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <button className={`${email.length>=10?'primary-btn':'secondary-btn'}`} onClick={openChannels}>
+            <button
+              className={`${
+                email.length >= 10 ? "primary-btn" : "secondary-btn"
+              }`}
+              onClick={openChannels}
+            >
               Checkout embed demo
             </button>
 
