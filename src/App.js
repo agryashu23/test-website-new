@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   // useEffect(() => {
   //   const script = document.createElement("script");
@@ -22,6 +23,10 @@ function App() {
   // }, []);
 
   const openChannels = () => {
+    if (email.length < 10) {
+      setError("Please enter a valid email address to proceed.");
+      return;
+    }
     setModalOpen(true);
     setTimeout(() => {
       if (window.openChannelsWidget) {
@@ -49,6 +54,7 @@ function App() {
             All your data has been securely transferred to Channels, which will
             provide you a better experience.
           </p>
+          <div className="email-text">Enter email to login into embed</div>
 
           <div className="cta-buttons">
             <div className="emailField">
@@ -68,11 +74,8 @@ function App() {
             >
               Checkout embed demo
             </button>
-
-            {/* <button className="secondary-btn" onClick={openChannels}>
-              Open Channels
-            </button> */}
           </div>
+          {error && <div className="error-message">{error}</div>}
         </div>
       </div>
       {modalOpen && (

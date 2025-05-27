@@ -131,12 +131,21 @@ body {
   font-weight: 600;
   color: #202020;
 }
-
+.email-text{
+  color:#202020;
+  margin-top: 14px;
+  font-size: 14px;
+}
+.error-message{
+  color:rgb(220, 50, 50);
+  margin-top: 8px;
+  font-size: 12px;
+}
 
 .cta-buttons {
   display: flex;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 2px;
   align-items: end;
 }
 
