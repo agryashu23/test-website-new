@@ -9,6 +9,11 @@ function App() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
+  const handleChange = (e) => {
+    setError("");
+    setEmail(e.target.value);
+  };
+
   // useEffect(() => {
   //   const script = document.createElement("script");
   //   script.src =
@@ -63,7 +68,7 @@ function App() {
                 className="input-field"
                 placeholder="email address"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
               />
             </div>
             <button
