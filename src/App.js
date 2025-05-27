@@ -30,7 +30,7 @@ function App() {
           email: email,
           selectedTopic: "General",
           theme: "dark",
-          channels: ["Footyl Club"],
+          channels: [],
         });
       } else {
         console.warn("openChannelsWidget not ready");
