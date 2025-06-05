@@ -14,19 +14,6 @@ function App() {
     setEmail(e.target.value);
   };
 
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src =
-  //     "http://localhost:3001/widget.js?apiKey=channelsbychips.site-6662f76162ac56e3fb0bcc5d-0e6052a455853e3e9027d62d95afa991";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   script.onload = () => {
-  //     if (window.ChannelsWidget) {
-  //       window.ChannelsWidget();
-  //     }
-  //   };
-  // }, []);
-
   const openChannels = () => {
     if (email.length < 10) {
       setError("Please enter a valid email address to proceed.");
@@ -87,7 +74,7 @@ function App() {
         <div className="modal-overlay" onClick={() => setModalOpen(false)}>
           <div className="modal-sidepanel" onClick={(e) => e.stopPropagation()}>
             <iframe
-              src="http://localhost:3001/embed/channels"
+              src="https://channels.social/embed/channels"
               title="Channels Embed"
               className="channels-frame"
             ></iframe>
