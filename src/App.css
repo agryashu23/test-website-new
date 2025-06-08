@@ -26,8 +26,8 @@
 .modal-sidepanel {
   position: fixed;
   border-radius: 50px;
-  right: 0;
-  bottom:0;
+  right: 10px;
+  bottom:10px;
   width: 450px;
   height: 95%;
   background: #fff;
@@ -42,7 +42,8 @@
   height: 100%;
   border: none;
   flex-grow: 1;
-  border-radius: 20px 0 0 0;
+  border-radius: 14px ;
+  background-color:#252525;
 }
 
 .close-button {
@@ -67,6 +68,8 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #202020 !important;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+
 
 body {
   font-family: Arial, sans-serif; 
@@ -120,8 +123,8 @@ body {
 }
 .content-box p {
   margin-top: 12px;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight:200;
   color: #202020;
 }
 
@@ -142,54 +145,81 @@ body {
   font-size: 12px;
 }
 
-.cta-buttons {
+.cta-email-wrapper {
   display: flex;
-  gap: 16px;
-  margin-top: 2px;
-  align-items: end;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #202020;
+  border-radius: 25px;
+  overflow: hidden; 
+  background-color: transparent; 
+  margin-top: 16px;
 }
 
-.primary-btn {
-  background-color: #202020;
-  color: white;
+.styled-email-input {
+  flex: 1;
+  padding: 14px 16px;
   border: none;
-  padding: 12px 20px;
-  font-weight: normal;
-  cursor: pointer;
-  border-radius: 10px;
+  background-color: transparent;
+  color: black;
+  font-size: 14px;
+  font-weight: 200;
 }
 
-.secondary-btn {
-  background: #3F3F3F;
-  color:  #c4c4c4;
-  text-decoration: none;
-  text-align: center;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
+.styled-email-input::placeholder {
+  color: #202020;
+  font-weight: 200;
 }
+
+.send-arrow-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.send-arrow-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.send-arrow-btn:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+  visibility: hidden;
+}
+
+
+.emailField{
+  margin-top: 8px;
+}
+.styled-email-input{
+  color: black;
+  background-color: transparent;
+}
+
+
+.styled-email-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.input-field::placeholder {
+  color: black;
+  font-weight: 100; 
+  opacity: 1; 
+}
+
 
 .right-image {
   max-height: 300px;
   object-fit: contain;
 }
 
-.emailField{
-  margin-top: 8px;
-}
-.input-field{
-  padding: 10px 8px;
-  border-radius: 6px;
-  border: 1px solid black;
-  color: black;
-  background-color: transparent;
-}
-.input-field::placeholder {
-  color: black;
-  font-weight: 100; 
-  opacity: 1; 
-}
+
 
 @media (max-width: 900px) {
   .og-container {

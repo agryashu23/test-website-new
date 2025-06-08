@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Logo from "./assets/channels_logo.svg";
 import ChipImage from "./assets/chips_home_image.svg";
+import SendButton from "./assets/up_arrrow.svg";
 import "./App.css";
 
 function App() {
@@ -43,30 +44,31 @@ function App() {
           <h2>Chips.social</h2>
           <h3>is now Channels.social</h3>
           <p className="description">
-            All your data has been securely transferred to Channels, which will
-            provide you a better experience.
+            We’ve moved and brought everything with us. Your data is safe, and
+            the experience is now better, faster, and built for more.
           </p>
-          <div className="email-text">Enter email to login into embed</div>
+          <p className="description">
+            To explore the new Channels embed, just enter your email below. It’s
+            quick and you’ll be dropped right into a live preview.
+          </p>
 
-          <div className="cta-buttons">
-            <div className="emailField">
-              <input
-                type="email"
-                className="input-field"
-                placeholder="email address"
-                value={email}
-                onChange={handleChange}
-              />
-            </div>
+          <div className="cta-email-wrapper">
+            <input
+              type="email"
+              className="styled-email-input"
+              placeholder="Enter email address"
+              value={email}
+              onChange={handleChange}
+            />
             <button
-              className={`${
-                email.length >= 10 ? "primary-btn" : "secondary-btn"
-              }`}
+              className="send-arrow-btn"
               onClick={openChannels}
+              disabled={email.length < 10}
             >
-              Checkout embed demo
+              <img src={SendButton} alt="arrow-btn" />
             </button>
           </div>
+
           {error && <div className="error-message">{error}</div>}
         </div>
       </div>
