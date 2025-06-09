@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Logo from "./assets/channels_logo.svg";
 import ChipImage from "./assets/chips_home_image.svg";
@@ -15,9 +15,21 @@ function App() {
     setEmail(e.target.value);
   };
 
-  const openChannels = () => {
+  const checkEmail = () => {
     if (email.length < 10) {
       setError("Please enter a valid email address to proceed.");
+      return false;
+    }
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address to proceed.");
+      return false;
+    }
+    return true;
+  };
+
+  const openChannels = () => {
+    if (!checkEmail()) {
       return;
     }
     setModalOpen(true);
@@ -29,12 +41,24 @@ function App() {
           selectedTopic: "General",
           theme: "dark",
           channels: [],
+          autoLogin: true,
         });
       } else {
         console.warn("openChannelsWidget not ready");
       }
     }, 200);
   };
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [modalOpen]);
 
   return (
     <div className="og-container">

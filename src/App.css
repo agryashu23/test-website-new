@@ -25,12 +25,12 @@
 
 .modal-sidepanel {
   position: fixed;
-  border-radius: 50px;
-  right: 10px;
-  bottom:10px;
+  border-radius: 14px 14px 0 0;
+  right: 0;
+  bottom:0;
   width: 450px;
   height: 95%;
-  background: #fff;
+  background: #252525 !important;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1001;
   display: flex;
@@ -42,7 +42,7 @@
   height: 100%;
   border: none;
   flex-grow: 1;
-  border-radius: 14px ;
+  border-radius: 14px 14px 0 0;
   background-color:#252525;
 }
 
@@ -109,6 +109,7 @@ body {
 }
 
 .content-box {
+  width: 100%;
   max-width: 450px;
   background-color: #ffa676;
   border-radius: 10px;
@@ -225,11 +226,14 @@ body {
   .og-container {
     flex-direction: column;
   }
+  .logo{
+    margin-top: 10px;
+  }
 
   .left-panel, .right-panel {
     width: 100%;
-    padding: 20px;
-    height: 50%;
+    padding: 15px;
+    height: 55%;
     align-items: center;
   }
 
@@ -261,19 +265,41 @@ body {
 
   .right-image {
     max-height: 250px;
-   
   }
+  
 }
 
 @media (max-width: 500px) {
   .modal-sidepanel{
-    width:350px
+    width:350px;
+    right:0px;
+    bottom:0px;
+    height:80%
   }
+  .channels-frame {
+  border-radius: 14px 14px 0 0 ;
+}
 
 }
 @media (max-width: 450px) {
   .modal-sidepanel{
     width:100%
   }
+  .left-panel {
+    height: 60%;
+  }
+  .right-panel{
+    height:40%;
+  }
+  .styled-email-input {
+  padding: 14px 10px;
+  }
+  .content-box {
+  padding:16px;
+}
+
+.send-arrow-btn {
+  padding: 0 8px;
+}
 
 }
