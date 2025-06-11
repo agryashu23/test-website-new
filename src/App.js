@@ -8,11 +8,16 @@ import "./App.css";
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const [position, setPosition] = useState("right");
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setError("");
     setEmail(e.target.value);
+  };
+
+  const handlePositionChange = (e) => {
+    setPosition(e.target.value);
   };
 
   const checkEmail = () => {
@@ -29,36 +34,30 @@ function App() {
   };
 
   const openChannels = () => {
-    if (!checkEmail()) {
+    if (email.length < 10 || !checkEmail(email)) {
+      setError("Please enter a valid email address to proceed.");
       return;
     }
-    setModalOpen(true);
-    setTimeout(() => {
-      if (window.openChannelsWidget) {
-        window.openChannelsWidget({
-          selectedChannel: "Footyl Club",
-          email: email,
-          selectedTopic: "General",
-          theme: "dark",
-          channels: [],
-          autoLogin: true,
-        });
-      } else {
-        console.warn("openChannelsWidget not ready");
-      }
-    }, 200);
-  };
 
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [modalOpen]);
+    window.openChannelsWidget({
+      email,
+      selectedChannel: "Footyl Club",
+      selectedTopic: "General",
+      theme: "dark",
+      autoLogin: true,
+      width: {
+        default: "450px",
+        md: "400px",
+        sm: "100%",
+      },
+      height: {
+        default: "95%",
+        md: "85%",
+        sm: "80%",
+      },
+      position: position,
+    });
+  };
 
   return (
     <div className="og-container">
@@ -92,11 +91,22 @@ function App() {
               <img src={SendButton} alt="arrow-btn" />
             </button>
           </div>
+          <div className="position-row">
+            <label className="position-label">Position</label>
+            <input
+              id="position-input"
+              type="text"
+              className="styled-position-input"
+              placeholder="e.g. right, left, bottom"
+              value={position}
+              onChange={handlePositionChange}
+            />
+          </div>
 
           {error && <div className="error-message">{error}</div>}
         </div>
       </div>
-      {modalOpen && (
+      {/* {modalOpen && (
         <div className="modal-overlay" onClick={() => setModalOpen(false)}>
           <div className="modal-sidepanel" onClick={(e) => e.stopPropagation()}>
             <iframe
@@ -106,7 +116,7 @@ function App() {
             ></iframe>
           </div>
         </div>
-      )}
+      )} */}
 
       <div className="right-panel">
         <img src={ChipImage} alt="illustration" className="right-image" />

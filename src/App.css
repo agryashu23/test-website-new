@@ -4,6 +4,11 @@
   font-family: Arial, sans-serif;
 }
 
+input, button {
+  touch-action: manipulation;
+}
+
+
 .launch-button {
   padding: 12px 20px;
   font-size: 1rem;
@@ -159,7 +164,7 @@ body {
 
 .styled-email-input {
   flex: 1;
-  padding: 14px 16px;
+  padding: 14px 20px;
   border: none;
   background-color: transparent;
   color: black;
@@ -219,6 +224,38 @@ body {
   max-height: 300px;
   object-fit: contain;
 }
+.position-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left:8px ;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.position-label {
+  font-weight: 400;
+  color: #202020;
+  font-size: 14px;
+}
+.styled-position-input{
+  width: 100%;
+  max-width: 100px;
+  background-color: transparent;
+  border: 1px solid #202020;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.styled-position-input::placeholder{
+  font-size: 12px;
+}
+.styled-position-input:focus{
+    outline: none !important;
+  box-shadow: none !important;
+}
+
 
 
 
@@ -286,11 +323,15 @@ body {
     width:100%
   }
   .left-panel {
-    height: 60%;
+    height: 65%;
   }
   .right-panel{
-    height:40%;
+    height:35%;
   }
+  .right-image {
+  max-height: 200px;
+  object-fit: contain;
+}
   .styled-email-input {
   padding: 14px 10px;
   }
